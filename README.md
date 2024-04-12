@@ -28,17 +28,16 @@ This is a simple Android application created to demonstrate how to implement `Re
 
 ## Implementation Details
 
-### DataClass
+### Class
 
-The `DataClass` represents the data model for the `RecyclerView` items.
 
 ```
-```The DataClass contains data 
+```The DataClass contains data for the 'RecyclerView'
 
-```The MainActivity initializes the RecyclerView, populates the data list, and sets the adapter.
+```The 'MainActivity' initializes the 'RecyclerView', populates the data list, and sets the adapter.
 
 
-```The AdapterClass extends RecyclerView.Adapter and is responsible for inflating the item layout and binding data to the RecyclerView.
+```The 'AdapterClass' extends 'RecyclerView.Adapter' and is responsible for inflating the item layout and binding data to the 'RecyclerView'.
 
 ```Layouts
 activity_main.xml: Contains the RecyclerView.
