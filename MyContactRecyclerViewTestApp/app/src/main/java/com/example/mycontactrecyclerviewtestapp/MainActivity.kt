@@ -28,14 +28,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter= AdapterClass(dataList)
 
-        Log.d("ActivityMain", "Recycler addapter set ")
+
     }
 
     private fun getData(){
         for(i in 1.. 20){
             dataList.add(DataClass("name $i"))
         }
-        //recyclerView.adapter= AdapterClass(dataList)
     }
 
 }
