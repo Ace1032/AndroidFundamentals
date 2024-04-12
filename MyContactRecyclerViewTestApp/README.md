@@ -5,7 +5,7 @@ This is a simple Android application created to demonstrate how to implement `Re
 ## Features
 
 - Populates a list of names using a `RecyclerView`.
-- Each item in the `RecyclerView` consists of a name and a message button.
+- Each item in the `RecyclerView` consists of a name.
 - Demonstrates the use of `RecyclerView.Adapter`, `RecyclerView.ViewHolder`, and `DataClass`.
 
 ## Getting Started
@@ -28,12 +28,18 @@ This is a simple Android application created to demonstrate how to implement `Re
 
 ## Implementation Details
 
-### DataClass
+### Classes
 
-The `DataClass` represents the data model for the `RecyclerView` items.
 
-```kotlin
-data class DataClass(
-    var name: String,
-    var b_value: Boolean = false
-)
+```
+```The DataClass contains data for the 'RecyclerView'
+
+```The 'MainActivity' initializes the 'RecyclerView', populates the data list, and sets the adapter.
+
+
+```The 'AdapterClass' extends 'RecyclerView.Adapter' and is responsible for inflating the item layout and binding data to the 'RecyclerView'.
+
+```Layouts
+activity_main.xml: Contains the RecyclerView.
+
+item_layout.xml: Defines the layout for each item in the RecyclerView. Each item consists of a CardView containing a TextView
