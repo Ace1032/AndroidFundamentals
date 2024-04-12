@@ -28,7 +28,7 @@ This is a simple Android application created to demonstrate how to implement `Re
 
 ## Implementation Details
 
-### Class
+### Classes
 
 
 ```
