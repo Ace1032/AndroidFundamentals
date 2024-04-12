@@ -32,10 +32,8 @@ This is a simple Android application created to demonstrate how to implement `Re
 
 The `DataClass` represents the data model for the `RecyclerView` items.
 
-```kotlin
-data class DataClass(
-    var name: String
-)
+```
+```The DataClass contains data 
 
 ```The MainActivity initializes the RecyclerView, populates the data list, and sets the adapter.
 
