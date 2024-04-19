@@ -25,8 +25,9 @@ retrofit2:converter-gson:2.9.0<br>
 kotlinx-coroutines-core:1.5.0
 
 ### Libraries:
-Retrofit: A type-safe HTTP client for Android and Java.
-Gson: A Java library to convert Java objects into their JSON representation.
-Kotlin Coroutines: For asynchronous programming.
-Converters:
+Retrofit: A type-safe HTTP client for Android and Java.<br>
+Gson: A Java library to convert Java objects into their JSON representation.<br>
+Kotlin Coroutines: For asynchronous programming.<be>
+
+### Converters:
 GsonConverterFactory: Used to convert the JSON response into Kotlin objects.
