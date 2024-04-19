@@ -19,8 +19,9 @@ The RetrofitAPI_Service object contains the main function to execute the API cal
 ## Dependencies and Libraries
 
 ### Dependencies:
-retrofit2:retrofit:2.9.0
-retrofit2:converter-gson:2.9.0
+
+retrofit2:retrofit:2.9.0<br>
+retrofit2:converter-gson:2.9.0<br>
 kotlinx-coroutines-core:1.5.0
 
 ### Libraries:
