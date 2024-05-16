@@ -10,6 +10,7 @@ Share and display the counter value between two fragments using activityViewMode
 
 ## Application Structure
 'CounterViewModel' - The CounterViewModel class manages the counter value and provides methods to increment, decrement, and get the current count.
+[CounterViewModel.kt](https://github.com/Ace1032/AndroidFundamentals/blob/main/MVVMShareData/app/src/main/java/com/example/mvvmsharedata/CounterViewModel.kt)
 
 'FirstFragment' and 'SecondFragment' display the current counter value and provides a button to navigate back to the Fragment. It contains a button to decrement the counter value.
 
