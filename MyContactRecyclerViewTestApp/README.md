@@ -1,45 +1,45 @@
 # MyContactRecyclerViewTestApp
 
-This is a simple Android application created to demonstrate how to implement `RecyclerView`. The project is designed for learning purposes and provides a basic understanding of setting up and using a `RecyclerView` in Android.
+1) This is a simple Android application created to demonstrate how to implement `RecyclerView`. The project is designed for learning purposes and provides a basic understanding of setting up and using a `RecyclerView` in Android.
 
-## Features
+The AdapterClass is a custom adapter for a RecyclerView in an Android application. It binds data from an ArrayList of DataClass objects to the views defined in a RecyclerView item layout.
 
-- Populates a list of names using a `RecyclerView`.
-- Each item in the `RecyclerView` consists of a name.
-- Demonstrates the use of `RecyclerView.Adapter`, `RecyclerView.ViewHolder`, and `DataClass`.
+## Components of AdapterClass: [AdapterClass.kt](https://github.com/Ace1032/AndroidFundamentals/blob/main/MyContactRecyclerViewTestApp/app/src/main/java/com/example/mycontactrecyclerviewtestapp/AdapterClass.kt)
+Primary Constructor:
 
-## Getting Started
+private val dataList: ArrayList<DataClass>: Takes a list of DataClass objects to be displayed in the RecyclerView.
+Inner ViewHolder Class:
 
-### Prerequisites
+class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView): Defines a ViewHolder that holds the view components for each item in the RecyclerView.
+val name: TextView = itemView.findViewById(R.id.name_id): Initializes a TextView to display the name field from DataClass.
+Override Methods:
 
-- Android Studio
-- Android SDK
-
-### Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Ace1032/AndroidFundamentals.git
-    ```
-
-2. Open the project in Android Studio.
-
-3. Run the application on an emulator or physical device.
-
-## Implementation Details
-
-### Classes
+onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass: Inflates the item layout (item_layout) and returns a ViewHolderClass instance.
+getItemCount(): Int: Returns the size of the dataList, indicating the number of items to be displayed.
+onBindViewHolder(holder: ViewHolderClass, position: Int): Binds the data from the dataList at the given position to the corresponding views in the ViewHolder.
 
 
-```
-```The DataClass contains data for the 'RecyclerView'
+2) The MainActivity class is the main entry point for the application and is responsible for setting up the user interface and populating the RecyclerView with data.
 
-```The 'MainActivity' initializes the 'RecyclerView', populates the data list, and sets the adapter.
+Components of MainActivity: [MainActivity.kt](https://github.com/Ace1032/AndroidFundamentals/blob/main/MyContactRecyclerViewTestApp/app/src/main/java/com/example/mycontactrecyclerviewtestapp/MainActivity.kt)
+Class Declaration:
 
+class MainActivity : AppCompatActivity(): Defines MainActivity as a subclass of AppCompatActivity.
+Member Variables:
 
-```The 'AdapterClass' extends 'RecyclerView.Adapter' and is responsible for inflating the item layout and binding data to the 'RecyclerView'.
+private lateinit var recyclerView: RecyclerView: Declares a RecyclerView to display a list of items.
+private lateinit var dataList: ArrayList<DataClass>: Declares an ArrayList to hold DataClass objects.
+onCreate Method:
 
-```Layouts
-activity_main.xml: Contains the RecyclerView.
+override fun onCreate(savedInstanceState: Bundle?): The method called when the activity is created.
+setContentView(R.layout.activity_main): Sets the layout for the activity.
+recyclerView = findViewById(R.id.rvContacts): Initializes the RecyclerView by finding it in the layout.
+dataList = arrayListOf<DataClass>(): Initializes the dataList.
+getData(): Calls the getData method to populate the dataList.
+recyclerView.layoutManager = LinearLayoutManager(this): Sets a LinearLayoutManager to handle the layout of the RecyclerView.
+recyclerView.setHasFixedSize(true): Optimizes the RecyclerView for fixed size.
+recyclerView.adapter = AdapterClass(dataList): Sets the custom adapter (AdapterClass) for the RecyclerView.
+getData Method:
 
-item_layout.xml: Defines the layout for each item in the RecyclerView. Each item consists of a CardView containing a TextView
+private fun getData(): A helper method to populate the dataList with dummy data.
+Uses a loop to add 20 DataClass objects to dataList, each with a name like "name 1", "name 2", etc.
