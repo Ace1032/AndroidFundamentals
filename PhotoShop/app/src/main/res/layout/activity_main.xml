@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageView"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:max="200"
+            android:progress="100" />
+        <SeekBar
+            android:id="@+id/seekBarColor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBar"
+            android:layout_margin="5dp"
+            android:max="200"
+            android:progress="100" />
+        <SeekBar
+            android:id="@+id/seekBarColor2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBarColor1"
+            android:layout_margin="5dp"
+            android:max="200"
+            android:progress="100" />
+        <SeekBar
+            android:id="@+id/seekBarColor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBarColor2"
+            android:layout_margin="5dp"
+            android:max="200"
+            android:progress="100" />
+        <SeekBar
+            android:id="@+id/seekBarColor4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBarColor3"
+            android:layout_margin="16dp"
+            android:max="200"
+            android:progress="100" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/seekBar"
+        android:layout_margin="16dp"
+        android:text="Load Image" />
+
+    <Button
+        android:id="@+id/buttonCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/seekBar"
+        android:layout_margin="16dp"
+        android:text="Crop Image" />
+
+
+
+</RelativeLayout>
