@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">GeoQuiz</string>
-    <string name="question_text">Kandy is the capital of Sri Lanka</string>
-    <string name="True_button">Ture</string>
-    <string name="false_button">False</string>
-    <string name="textScore">Score</string>
-</resources>
