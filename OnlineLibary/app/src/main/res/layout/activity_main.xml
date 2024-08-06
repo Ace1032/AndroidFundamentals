@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleId"
+            android:text="My Libary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/seeAllBooksId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleId"
+            android:layout_marginTop="17dp"
+            android:text="SEE ALL BOOKS"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentlyReadingBooksId"
+            android:layout_below="@id/seeAllBooksId"
+            android:layout_marginTop="20dp"
+            android:text="CURRUNTLY READING BOOKS"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wantsToReadBooksId"
+            android:layout_below="@id/currentlyReadingBooksId"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:text="WANTS TO READ BOOKS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alreadyReadBooksId"
+            android:layout_below="@id/wantsToReadBooksId"
+            android:layout_marginTop="20dp"
+            android:text="ALREADY READ BOOKS"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutId"
+            android:layout_below="@id/alreadyReadBooksId"
+            android:layout_marginTop="20dp"
+            android:text="ABOUT"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>
