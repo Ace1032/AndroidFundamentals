@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CreminalIntent</string>
+    <String name="crime_title_hint">Enter a title for the crime</String>
+    <String name="crime_title_label">Title</String>
+    <String name="crime_details_label">Details</String>
+    <String name="crime_solved_label">Solved</String>
+
+</resources>

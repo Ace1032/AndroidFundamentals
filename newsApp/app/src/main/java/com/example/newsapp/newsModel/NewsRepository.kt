@@ -5,20 +5,25 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 class NewsRepository {
-    private val _articles = MutableLiveData<List<Article>>()
-
-    // Expose articles as LiveData to prevent external modification
-    val articles: LiveData<List<Article>>
-        get() = _articles
+    private lateinit var articles:List<Article>
 
     suspend fun fetchNews() {
-        suspend fun fetchNews() {
-            val fetchedArticles = NewsService.fetchNews()
-            fetchedArticles?.let { articles ->
-                _articles.postValue(articles)
-            } ?: run {
-                Log.e("Error", "fetchNews() from NewsRepository: fetchedArticles is null")
-            }
+        Log.d("trace fail", "NewsRepository -> fetchNews()")
+        val fetchedArticles = NewsService.fetchNews()
+
+        if (fetchedArticles != null) {
+            Log.d("result article", "Fetched Articles Size: ${fetchedArticles.size}")
+            articles=fetchedArticles
+            Log.d("result article", "Fetched Articles Size: ${fetchedArticles.size}")
+        } else {
+            Log.e("Error from newsRepository", "fetchNews() from NewsRepository: fetchedArticles is null")
         }
     }
+
+    fun getArticles(): List<Article>{
+        return articles
+    }
+
 }
+
+

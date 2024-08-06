@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_layer"
+        android:orientation="vertical"
+        >
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Make the most of your professional life"
+        android:id="@+id/tag_pagename"
+        android:textSize="30dp"
+        android:layout_marginTop="15dp"
+        ></TextView>
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Name"
+        android:id="@+id/profileName"
+        android:textSize="20dp"
+        android:layout_below="@+id/tag_pagename"
+        android:layout_marginTop="15dp"
+        >
+    </EditText>
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Email"
+        android:id="@+id/emailID"
+        android:textSize="20dp"
+        android:layout_below="@+id/profileName"
+        android:layout_marginTop="15dp">
+    </EditText>
+        </LinearLayout>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/bottom_layer"
+       android:orientation="vertical"
+       android:layout_below="@+id/top_layer"
+       android:layout_marginTop="30dp"
+       >
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Gender:"
+           android:id="@+id/g_lable">
+       </TextView>>
+       <RadioGroup
+           android:id="@+id/gender"
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent">
+           <RadioButton
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Male"/>
+           <RadioButton
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Female"/>
+       </RadioGroup>
+
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/submit_id"
+           android:text="SUBMIT"
+           android:layout_gravity="center"
+
+           />
+   </LinearLayout>
+
+
+
+</RelativeLayout>
