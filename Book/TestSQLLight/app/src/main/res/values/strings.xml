@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">TestSQLLight</string>
-    <string name="customerName">Customer Name</string>
-    <string name="customerAge">Age</string>
-    <string name="ActiveUser">Active User</string>
-    <string name="addButton">Add Button</string>
-    <string name="viewAll">View All</string>
-</resources>
