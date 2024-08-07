@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.heart2heart_1.MainActivity
 import com.example.heart2heart_1.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -27,8 +28,11 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+            ViewModelProvider(requireActivity(),
+                DashboardViewModelFactory((requireActivity() as MainActivity).repository))
+                .get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -45,19 +49,22 @@ class DashboardFragment : Fragment() {
         recyclerView1.adapter = activityAdapter1
         recyclerView2.adapter = activityAdapter2
 
+
         dashboardViewModel.myActivities.observe(viewLifecycleOwner) { activities ->
             activities?.let {
-                activityAdapter1.updateActivityList(it)
+                activityAdapter2.updateActivityList(it)
 
             }
         }
 
         dashboardViewModel.upcomingActivities.observe(viewLifecycleOwner) { activities ->
             activities?.let {
-                activityAdapter2.updateActivityList(it)
+                activityAdapter1.updateActivityList(it)
 
             }
         }
+        dashboardViewModel.addMyActivities()
+        dashboardViewModel.addUpcomingActivities()
 
         return root
     }

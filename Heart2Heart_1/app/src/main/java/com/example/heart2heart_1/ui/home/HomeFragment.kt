@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.heart2heart_1.MainActivity
 import com.example.heart2heart_1.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -41,15 +42,16 @@ class HomeFragment : Fragment() {
        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = newsAdapter
 
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        homeViewModel = ViewModelProvider(requireActivity(),
+            HomeViewModelFactory((requireActivity() as MainActivity).repository))
+            .get(HomeViewModel::class.java)
 
        homeViewModel.articles.observe(viewLifecycleOwner, Observer { articles ->
            Log.d("HomeFragment", "Articles: ${articles.get(0).title}")
            newsAdapter.updateNewsList(articles)
        })
 
-        homeViewModel.getArticles()
+        homeViewModel.addArticle()
         return root
     }
 

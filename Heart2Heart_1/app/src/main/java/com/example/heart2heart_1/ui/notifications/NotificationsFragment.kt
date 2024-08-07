@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.heart2heart_1.MainActivity
 import com.example.heart2heart_1.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
@@ -26,7 +27,8 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+            ViewModelProvider(requireActivity(), NotificationsViewModelFactory((requireActivity() as MainActivity)
+                .repository)).get(NotificationsViewModel::class.java)
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -44,7 +46,7 @@ class NotificationsFragment : Fragment() {
                 chatAdapter.updateChatList(it)
             }
         }
-
+        notificationsViewModel.addMessages()
         return root
     }
 

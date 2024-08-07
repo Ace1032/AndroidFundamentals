@@ -8,9 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.heart2heart_1.databinding.ActivityMainBinding
+import com.example.heart2heart_1.sampledata.DataRepository
 
 class MainActivity : AppCompatActivity() {
-
+    val repository: DataRepository by lazy { DataRepository() }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

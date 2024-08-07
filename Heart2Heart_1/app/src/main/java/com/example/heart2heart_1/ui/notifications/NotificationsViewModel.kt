@@ -4,21 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.heart2heart_1.sampledata.ChatMessage
+import com.example.heart2heart_1.sampledata.DataRepository
 
-class NotificationsViewModel : ViewModel() {
-
-    private val _messages = MutableLiveData<List<ChatMessage>>()
-    val messages: LiveData<List<ChatMessage>> = _messages
+class NotificationsViewModel (private val repository: DataRepository): ViewModel() {
 
 
-    init{
-        val messageList = listOf(
-            ChatMessage("Sender 1", "Message 1", 1234567890),
-            ChatMessage("Sender 2", "Message 2", 1234567891)
-        )
-        _messages.value = messageList
+    val messages: LiveData<List<ChatMessage>> =repository.messages
 
 
+    fun addMessages(){
+        repository.addMessages()
+
+    }
+    fun updateMessages(message: ChatMessage){
+        repository.updateMessages(message)
     }
 
 }
